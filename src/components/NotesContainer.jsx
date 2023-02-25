@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './NotesContainer.module.css';
 
-const NotesContainer = ({ notes, onAddNote, onDeleteNote }) => {
+const NotesContainer = ({
+	notes,
+	onAddNote,
+	onDeleteNote,
+	currentNote,
+	setCurrentNote,
+}) => {
 	return (
 		<div className={styles.notesContainer}>
 			<div className={styles.header}>
@@ -12,13 +18,17 @@ const NotesContainer = ({ notes, onAddNote, onDeleteNote }) => {
 
 			<div className={styles.notesHolder}>
 				{notes.map(note => {
-					return (
-						<div className={styles.note} key={note.id}>
+          return (
+            <div
+              className={`${styles.note} ${note.id === currentNote ? styles.activeNote : ''}`}
+							key={note.id}
+							onDoubleClick={() => setCurrentNote(note.id)}
+						>
 							<div className={styles.noteHeader}>
 								<h3> {note.title} </h3>
 								<button
 									className={styles.btnDelete}
-									onClick={(e) => onDeleteNote(note.id)}
+									onClick={e => onDeleteNote(note.id)}
 								>
 									{' '}
 									Delete{' '}

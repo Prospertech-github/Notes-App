@@ -5,7 +5,8 @@ import Main from './components/Main';
 import NotesContainer from './components/NotesContainer';
 
 function App() {
-	const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
+  const [currentNote, setCurrentNote] = useState(false)
 
 	const addNote = () => {
 		const newNote = {
@@ -18,8 +19,8 @@ function App() {
 		setNotes([newNote, ...notes]);
 	};
 
-  const deleteNote = (noteId) => {
-    setNotes(notes.filter(({ id }) => id !== noteId));
+  const deleteNote = idToDelete => {
+		setNotes(notes.filter(note => note.id !== idToDelete));
   };
 
 	return (
@@ -27,7 +28,9 @@ function App() {
 			<NotesContainer
 				notes={notes}
 				onAddNote={addNote}
-				onDeleteNote={deleteNote}
+        onDeleteNote={deleteNote}
+        currentNote={currentNote}
+        setCurrentNote={setCurrentNote}
 			/>
 			<Main />
 		</div>
