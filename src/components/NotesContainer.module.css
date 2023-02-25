@@ -2,7 +2,6 @@
 	width: 30%;
 	font-size: 1.8rem;
 	height: 100%;
-	border: 2px solid;
 }
 
 .header {
@@ -29,7 +28,6 @@ button {
 	gap: 1rem;
 }
 .note {
-	border: 2px solid;
 	padding: 1rem 0.5rem;
 }
 .note:hover {
