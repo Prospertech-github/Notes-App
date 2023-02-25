@@ -1,0 +1,22 @@
+.notesContainer{
+  width: 30%;
+  font-size: 1.8rem;
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.header h2{
+  color: #222;
+}
+button{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(0, 161, 0);
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}

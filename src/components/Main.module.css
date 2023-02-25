@@ -1,0 +1,43 @@
+.mainSection{
+  width: 70%;
+  padding: 2rem 1.5rem;
+}
+.formControls{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.formControls input{
+  height: 5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+  border: none;
+  padding: 0.5rem;
+}
+input:focus{
+  outline: none;
+}
+.formControls textarea{
+  height: 25rem;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  border: none;
+}
+textarea:focus{
+  outline: none;
+}
+
+.previewArea{
+  margin-top: 5rem;
+}
+.noteTitle{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.note{
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
