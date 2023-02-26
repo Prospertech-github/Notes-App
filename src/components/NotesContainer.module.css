@@ -32,8 +32,8 @@ button {
   border-radius: 5px;
 }
 .note:hover {
-	background-color: #444;
-	color: #f4f4f4;
+	background-color: #aaa;
+	color: #000;
 }
 .noteHeader {
 	display: flex;
@@ -53,6 +53,6 @@ small {
 	font-weight: 600;
 }
 .activeNote{
-  background-color: rgb(130, 130, 255);
+  background-color: #444;
   color: #f4f4f4;
 }

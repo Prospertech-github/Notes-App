@@ -12,7 +12,7 @@ function App() {
 		const newNote = {
 			id: uuid(),
 			title: 'Note Title',
-			body: 'lorem ipsum untitled',
+			body: ' ',
 			modifiedDate: Date.now(),
 		};
 
@@ -23,6 +23,21 @@ function App() {
 		setNotes(notes.filter(note => note.id !== idToDelete));
   };
 
+  const getCurrentNote = () =>{
+		return notes.find((note) => note.id === currentNote)
+	}
+	
+	const updateNoteHandler = (updatedNote) => {
+		const updatedNoteArray = notes.map((note) => {
+			if (note.id === currentNote) {
+				return updatedNote
+			}
+			return note
+		})
+
+		setNotes(updatedNoteArray)
+	}
+
 	return (
 		<div className="App">
 			<NotesContainer
@@ -32,7 +47,7 @@ function App() {
         currentNote={currentNote}
         setCurrentNote={setCurrentNote}
 			/>
-			<Main />
+			<Main currentNote={getCurrentNote()} updateNote={ updateNoteHandler } />
 		</div>
 	);
 }

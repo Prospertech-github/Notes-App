@@ -35,7 +35,7 @@ const NotesContainer = ({
 								</button>
 							</div>
 
-							<p className={styles.noteDetails}>{note.body}</p>
+							<p className={styles.noteDetails}>{note.body && note.body.substr(0, 120) + "..."}</p>
 
 							<small className={styles.noteMeta}>
 								Last Modified{' '}
