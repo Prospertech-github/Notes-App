@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import styles from './Main.module.css';
 
 const Main = ({ currentNote, updateNote }) => {
@@ -43,7 +44,7 @@ const Main = ({ currentNote, updateNote }) => {
 				</div>
 
 				<div className={styles.noteText}>
-					<p className={styles.note}>{currentNote.body}</p>
+					<ReactMarkdown className={styles.note}>{currentNote.body}</ReactMarkdown>
 				</div>
 			</div>
 		</div>
