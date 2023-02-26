@@ -8,6 +8,9 @@ const NotesContainer = ({
 	currentNote,
 	setCurrentNote,
 }) => {
+
+	const sortedNotes = notes.sort((a,b) => b.modifiedDate - a.modifiedDate);
+
 	return (
 		<div className={styles.notesContainer}>
 			<div className={styles.header}>
@@ -17,7 +20,7 @@ const NotesContainer = ({
 			</div>
 
 			<div className={styles.notesHolder}>
-				{notes.map(note => {
+				{sortedNotes.map(note => {
           return (
             <div
               className={`${styles.note} ${note.id === currentNote ? styles.activeNote : ''}`}
@@ -44,6 +47,7 @@ const NotesContainer = ({
 									{
 										hour: '2-digit',
 										minute: '2-digit',
+										second: '2-digit'
 									}
 								)}
 							</small>
